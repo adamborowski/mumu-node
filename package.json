@@ -1,0 +1,17 @@
+{
+  "name": "mumu-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "immer": "^10.0.3"
+  },
+  "devDependencies": {
+    "vitest": "^1.2.0"
+  }
+}
