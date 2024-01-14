@@ -84,7 +84,7 @@ export function startMillionaire() {
 
 
     setTimeout(() => {
-      log("Time is up! No one answered correctly!");
+      log("Time is up!");
       stopGame();
     }, 10000); // after 10 seconds, cancel the game
 
@@ -92,6 +92,9 @@ export function startMillionaire() {
       log(`The winner is ${winner.name} with answer ${winner.answer}`);
       log('Stopping the game!')
       stopGame(); // we also cancel the game here, so no one else should work on the answer
-    });
+    }).catch(() => {
+      log('No one answered correctly!')
+      stopGame();
+    })
   })
 }

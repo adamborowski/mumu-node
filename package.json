@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "test:todomgr": "vitest src/todomgr.test.mjs",
+    "test:millionaire": "vitest src/millionaire.test.mjs"
   },
   "author": "",
   "license": "ISC",
