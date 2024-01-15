@@ -166,7 +166,7 @@ function createFakeApi() {
         setTimeout(() => {
           const dogIndex = fakeDogs.findIndex((dog) => dog.id === id);
           if (dogIndex !== -1) {
-            fakeDogs.splice(dogIndex, 1); // Remove the dog
+            fakeDogs = fakeDogs.filter((dog) => dog.id !== id);
             resolve();
           } else {
             reject(new Error("Dog not found"));
