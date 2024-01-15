@@ -34,10 +34,10 @@ describe("Proxy", () => {
 
       it("should update a dog's name correctly", async () => {
         const dogs = createDogsApi(createFakeApi());
-        const myDog = await dogs.dexter;
+        const myDog = await dogs.cooper;
         await myDog({ name: "Pikuś" });
         expect(myDog.name).toBe("Pikuś");
-        const myDogAgain = await dogs.dexter;
+        const myDogAgain = await dogs.cooper;
         expect(myDogAgain.name).toBe("Pikuś");
       });
 
@@ -52,10 +52,10 @@ describe("Proxy", () => {
 
       it("should delete a dog correctly", async () => {
         const dogs = createDogsApi(createFakeApi());
-        const myDog = await dogs.dexter; // Ensure dog is fetched
-        delete dogs.dexter;
+        const myDog = await dogs.max; // Ensure dog is fetched
+        delete dogs.max;
         expect(myDog.id).toBe(-1);
-        const myDogAgain = await dogs.dexter;
+        const myDogAgain = await dogs.max;
         expect(myDogAgain).toBeUndefined();
       });
 
