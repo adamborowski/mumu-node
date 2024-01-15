@@ -29,17 +29,15 @@ const startParticipant = (name, challenge, signal) =>
   });
 
 const awaitFirstProperAnswer = (participantSimulators, challenge) => {
-
-  return new Promise((resolve, reject) => {
-    participantSimulators.forEach((simulator) => {
+  const goodSimulators = participantSimulators.map((simulator) =>
+    new Promise((resolve, reject) => {
       simulator.then((result) => {
         if (result.answer === challenge.answer) {
           resolve(result);
         }
-      });
-    })
-    Promise.all(participantSimulators).catch(reject)
-  });
+      }).catch(reject)
+    }))
+  return Promise.race(goodSimulators);
 };
 
 export function startMillionaire() {
