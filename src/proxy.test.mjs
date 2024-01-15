@@ -8,7 +8,7 @@ describe("Proxy", () => {
       const dogs = createDogsApi(createFakeApi());
       console.log("await dogs.dexter");
       const myDog = await dogs.dexter;
-      console.log("just received my dog", printDog(myDog));
+      console.log("just fetched my dog", printDog(myDog));
       console.log("lets change my dog name to Pikuś");
       await myDog({ name: "Pikuś" });
       console.log("just changed my dog name to 12", printDog(myDog));
@@ -19,7 +19,7 @@ describe("Proxy", () => {
       delete dogs.dexter;
       console.log("just deleted my dog", printDog(myDog));
       const myDogAgain = await dogs.dexter;
-      console.log("just received my dog after deleting", printDog(myDogAgain));
+      console.log("just fetched my dog after deleting", printDog(myDogAgain));
     });
   });
   describe(
